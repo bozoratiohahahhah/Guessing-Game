@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>csp project</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+
+    <body>
+        
+        <div id="bigtitle" style="text-align: center;">
+            <h2>Welcome to football quiz </h2>
+            <h3 id="entername">please enter your name before starting the quiz</h3>
+            <input type="text" id="name123" autocomplete="off">
+            <button id="namesubmitbtn" onclick="namesubmit()" >submit</button><hr>
+            <h4 id="alerter">Enter your name above for the start button to activate</h4>
+            <button id="startquiz" onclick="startq()" disabled>Start MCQ</button>
+            <button id="startq22" onclick="startfrq()" disabled>Start FRQ</button>
+        </div>
+        <!-- this is the frq part-->
+        <div id="frq" hidden style="text-align: center;">
+            <H2>This is a QBR calculator, you need this to fill out some of the problems.</H2>
+            <p>QBR, or passer rating, is a metric used to grade how a quarterback performs in a game. Usually a score of 100+ is cnosidered good, and 90 is ok, and below that is bad.</p>
+            <h3>Pass Attemps</h3>
+            <input type="number" name="attemp" id="att" autocomplete="off">
+            <h3>Pass Completions</h3>
+            <input type="number" name="compl" id="comop" autocomplete="off">
+            <h3>Pass Yards</h3>
+            <input type="number" name="yards" id="yds" autocomplete="off">
+            <h3>Touchdows</h3>
+            <input type="number" name="tds" id="tds" autocomplete="off">
+            <h3>Interceptions</h3>
+            <input type="number" name="ints" id="ints" autocomplete="off">
+            <h4 id="qbrating">Passer Rating</h4><br>
+            <button id="qbrcalc" onclick="calc()" disabled>Calculate QBR</button>
+            <!--questions-->
+            <h3>Question 1</h3>
+            <p>What is the perfect passer rating? just write the number nothing else with 2 decimal points</p>
+            <input type="number" name="frq1" id="frq1" autocomplete="off"><br>
+            <h3>Question 2</h3>
+            <p>Calculate the QBR with 5 touchdowns, 1 interception, 12 completions, 20 attempts, and 200 yards.</p>
+            <input type="number" name="frq2" id="frq2" autocomplete="off"><br>
+            <h3>Question 3</h3>
+            <p>If baker mayfield had 33 attempts, 21 completions, 235 yards, 1 td and a qbr of 92.05, how many interceptionss did he throw? </p>
+            <input type="number" name="frq3" id="frq3" autocomplete="off"><br>
+            <h3>Question 4</h3>
+            <p>How old was tom brady when he won his last super bowl?</p>
+            <input type="number" name="frq4" id="frq4" autocomplete="off"><br>
+            <h3>Question 5</h3>
+            <p>Find the qbr of 12 att 12 comp 100 yards and 4 ints</p>
+            <input type="number" name="frq5" id="frq5" autocomplete="off"><br>
+            <button id="finishfrq" onclick="finishfrq()" >Finish FRQ</button>
+            <button id="resetfrq" onclick="resetfrq()" >Reset FRQ</button><hr><br>
+            <button id="switchtomcq" onclick="switchmcq()" >Do the mcqs</button><hr><br>
+        </div>
+        <!-- this is the mcq part-->
+        <div id="hideall" hidden>
+            <div id="Q1" hidden style="text-align: center;">
+                <h2>Question 1</h2>
+                <img src="hutch.webp" width="300px" length="auto" id="hutch">
+                <h3 id="alerter1">Who is this player?</h3>
+                <input type="radio" name="level" id="q1a1" value=3 ><label for="e" >A: Dexter Lawrence  </label><br>
+                <input type="radio" name="level" id="q1a2" value=10 ><label for="m">B: TJ Watt          </label><br>
+                <input type="radio" name="level" id="q1a3" value=100 ><label for="h">C: Aidan Hutchinson </label><br>
+                <input type="radio" name="level" id="q1a4" value=1000 ><label for="d">D: Myles Garret     </label><br><hr>
+            </div>
+            <div id="Q2" hidden style="text-align: center;">
+                <h2>Question 2</h2>
+                <img src="ajbrown.png" width="200px" length="auto" id="ajb">
+                <h3 id="alerter2">Who is this player?</h3>
+                <input type="radio" name="level1" id="q2a1" value=3 ><label for="ee" >A: Justin Jefferson</label><br>
+                <input type="radio" name="level1" id="q2a2" value=10 ><label for="mm">B: Rashee Rice    </label><br>
+                <input type="radio" name="level1" id="q2a3" value=100 ><label for="hh">C: Tyreek Hill     </label><br>
+                <input type="radio" name="level1" id="q2a4" value=1000 ><label for="dd">D: AJ Brown       </label><br>
+                <br><br><hr>
+            </div>
+            <div id="Q3" hidden style="text-align: center;">
+                <h2>Question 3</h2>
+                <img src="ps2.png" width="200px" length="auto" id="ps2">
+                <h3 id="alerter3">Who is this player??</h3>
+                <input type="radio" name="level2" id="q3a1" value=3 ><label for="eee" >A: Patrick Surtain II</label><br>
+                <input type="radio" name="level2" id="q3a2" value=10 ><label for="mmm">B: Tariq Woolen      </label><br>
+                <input type="radio" name="level2" id="q3a3" value=100 ><label for="hhh">C: Kyle Hamilton     </label><br>
+                <input type="radio" name="level2" id="q3a4" value=1000 ><label for="ddd">D: Sauce Gardner     </label><br>
+                <br><br><hr>
+            </div>
+            <div id="Q4" hidden style="text-align: center;">
+                <h2>Question 4</h2>
+                <h3 id="alerter4">Who won the first superbowl?</h3>
+                <input type="radio" name="level3" id="q4a1" value=3 ><label for="e4" >A: Packers  </label><br>
+                <input type="radio" name="level3" id="q4a2" value=10 ><label for="m4">B: Chiefs   </label><br>
+                <input type="radio" name="level3" id="q4a3" value=100 ><label for="h4">C: Vikings  </label><br>
+                <input type="radio" name="level3" id="q4a4" value=1000 ><label for="d4">D: Cowboys  </label><br>
+                <br><hr>
+            </div>
+            <div id="Q5" hidden style="text-align: center;">
+                <h2>Question 5</h2>
+                <h3 id="alerter5">Who won NFL MVP last year?</h3>
+                <input type="radio" name="level4" id="q5a1" value=3 ><label for="e5" >A: Josh Allen      </label><br>
+                <input type="radio" name="level4" id="q5a2" value=10 ><label for="m5">B: Travis Kecle    </label><br>
+                <input type="radio" name="level4" id="q5a3" value=100 ><label for="h5">C: Patrick Mahomes </label><br>
+                <input type="radio" name="level4" id="q5a4" value=1000 ><label for="d5">D: Lamar Jackson   </label><br><br><hr>
+            </div>
+            <div id="Q6" hidden style="text-align: center;">
+                <h2>Question 6</h2>
+                <h3 id="alerter6">Which nfl has the most super bowl rings?</h3>
+                <input type="radio" name="level5" id="q6a1" value=3 ><label for="e5" >A: The Cheifs   </label><br>
+                <input type="radio" name="level5" id="q6a2" value=10 ><label for="m5">B: The 49ers    </label><br>
+                <input type="radio" name="level5" id="q6a3" value=100 ><label for="h5">C: The Patriots </label><br>
+                <input type="radio" name="level5" id="q6a4" value=1000 ><label for="d5">D: The Packers  </label><br><br><hr>
+            </div>
+            <div id="Q7" hidden style="text-align: center;">
+                <h2>Question 7</h2>
+                <h3 id="alerter7">Who has won the most MVPs ever?</h3>
+                <input type="radio" name="level6" id="q7a1" value=3 ><label for="e5" >A: Tom Brady       </label><br>
+                <input type="radio" name="level6" id="q7a2" value=10 ><label for="m5">B: Peyton Manning  </label><br>
+                <input type="radio" name="level6" id="q7a3" value=100 ><label for="h5">C: Patrick Mahomes </label><br>
+                <input type="radio" name="level6" id="q7a4" value=1000 ><label for="d5">D: Lamar Jackson   </label><br><br><hr>
+            </div>
+            <div id="Q8" hidden style="text-align: center;">
+                <h2>Question 8</h2>
+                <h3 id="alerter8">Which wide receiver is nicknamed megatron?</h3>
+                <input type="radio" name="level7" id="q8a1" value=3 ><label for="e5" >A: DK Metcalf     </label><br>
+                <input type="radio" name="level7" id="q8a2" value=10 ><label for="m5">B: Chad Ochincinco</label><br>
+                <input type="radio" name="level7" id="q8a3" value=100 ><label for="h5">C: Calvin Johnson </label><br>
+                <input type="radio" name="level7" id="q8a4" value=1000 ><label for="d5">D: Randy Moss     </label><br><br><hr>
+            </div>
+            <div id="Q9" hidden style="text-align: center;">
+                <h2>Question 9</h2>
+                <h3 id="alerter9">Which running back has won offense player of the year the most??</h3>
+                <input type="radio" name="level8" id="q9a1" value=3 ><label for="e5" >A: Terrel Davis       </label><br>
+                <input type="radio" name="level8" id="q9a2" value=10 ><label for="m5">B: Christian McCaffrey</label><br>
+                <input type="radio" name="level8" id="q9a3" value=100 ><label for="h5">C: Barry Sanders      </label><br>
+                <input type="radio" name="level8" id="q9a4" value=1000 ><label for="d5">D: Marshall Faulk     </label><br><br><hr>
+            </div>
+            <div id="Q10" hidden style="text-align: center;">
+                <h2>Question 10</h2>
+                <h3 id="alerter10">Which cornerback has the most interceptions in a season?</h3>
+                <input type="radio" name="level9" id="q10a1" value=3 ><label for="e5" >A: Richard Sherman </label><br>
+                <input type="radio" name="level9" id="q10a2" value=10 ><label for="m5">B: Night Train Lane</label><br>
+                <input type="radio" name="level9" id="q10a3" value=100 ><label for="h5">C: Deion Sanders   </label><br>
+                <input type="radio" name="level9" id="q10a4" value=1000 ><label for="d5">D: Champ Bailey    </label><br><br><hr>
+            </div>
+            <div id="Q11" hidden style="text-align: center;">
+                <h2>Question 11</h2>
+                <h3 id="alerter11">Who is considered the greatest defensive player of all time?</h3>
+                <input type="radio" name="level10" id="q11a1" value=3 ><label for="e5" >A: Ray Lewis </label><br>
+                <input type="radio" name="level10" id="q11a2" value=10 ><label for="m5">B: Ed Reed</label><br>
+                <input type="radio" name="level10" id="q11a3" value=100 ><label for="h5">C: Aqib Talib   </label><br>
+                <input type="radio" name="level10" id="q11a4" value=1000 ><label for="d5">D: Lawrence Taylor    </label><br><br><hr>
+            </div>
+            <div id="Q12" hidden style="text-align: center;">
+                <h2>Question 12</h2>
+                <h3 id="alerter12">Who is the NFL's all time sack leader?</h3>
+                <input type="radio" name="level11" id="q12a1" value=3 ><label for="e5" >A: Bruce Smith  </label><br>
+                <input type="radio" name="level11" id="q12a2" value=10 ><label for="m5">B: Michael Strahan</label><br>
+                <input type="radio" name="level11" id="q12a3" value=100 ><label for="h5">C: Julius Peppers  </label><br>
+                <input type="radio" name="level11" id="q12a4" value=1000 ><label for="d5">D: Reggie White   </label><br><br><hr>
+            </div>
+            <div id="Q13" hidden style="text-align: center;">
+                <h2>Question 13</h2>
+                <img src="NABERRS.webp" width="auto" length="300px" id="malik">
+                <h3 id="alerter13">Who is this rookie WR?</h3>
+                <input type="radio" name="level12" id="q13a1" value=3 ><label for="e5" >A: Brian Thomas Jr </label><br>
+                <input type="radio" name="level12" id="q13a2" value=10 ><label for="m5">B: Malik Nabers</label><br>
+                <input type="radio" name="level12" id="q13a3" value=100 ><label for="h5">C: Marvin Harrison Jr   </label><br>
+                <input type="radio" name="level12" id="q13a4" value=1000 ><label for="d5">D: Keon Coleman    </label><br><br><hr>
+            </div>
+            <div id="Q14" hidden style="text-align: center;">
+                <h2>Question 14</h2>
+                <h3 id="alerter14">Who had the greatest cornerback season in 2009?</h3>
+                <input type="radio" name="level13" id="q14a1" value=3 ><label for="e5" >A: Richard Sherman </label><br>
+                <input type="radio" name="level13" id="q14a2" value=10 ><label for="m5">B: Champ Bailey    </label><br>
+                <input type="radio" name="level13" id="q14a3" value=100 ><label for="h5">C: Charless Woodson</label><br>
+                <input type="radio" name="level13" id="q14a4" value=1000 ><label for="d5">D: Darrelle Revis  </label><br><br><hr>
+            </div>
+            <div id="Q15" hidden style="text-align: center;">
+                <h2>Question 15</h2>
+                <h3 id="alerter15">Who has the rookie rushing record?</h3>
+                <input type="radio" name="level14" id="q15a1" value=3 ><label for="e5" >A: Ezekiel Elliot     </label><br>
+                <input type="radio" name="level14" id="q15a2" value=10 ><label for="m5">B: Christian McCaffrey</label><br>
+                <input type="radio" name="level14" id="q15a3" value=100 ><label for="h5">C: Eric Dickerson     </label><br>
+                <input type="radio" name="level14" id="q15a4" value=1000 ><label for="d5">D: Adrian Peterson    </label><br><br><hr>
+            </div>
+        </div>
+        <div id="hidea" hidden style="text-align: center;">
+            <button id="finishbtn" onclick="submit()" disabled>Finish MCQ</button>
+            <button id="play2btn" onclick="playagain()" disabled>Redo MCQ</button>
+            <button id="switchmfrq" onclick="switchfrq()" >Do the frqs</button><hr><br>
+        </div>
+        <div id="scoresrvl" style="text-align: center;">
+            <h2>Scores</h2>
+            <p id="congrats">Good Luck!</p>
+            <p id="scoree">Score: 0</p>
+            <p id="avgScore">Average Score:</p>
+            <p id="times">Time: 00</p>
+            <p id="avgTime">Average Time</p>
+            <br><br><br><br><br><hr><hr><hr>
+        </div>
+    </script>
+</html>
